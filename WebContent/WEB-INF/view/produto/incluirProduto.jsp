@@ -74,7 +74,7 @@
 							</div>
 							<!-- form-group end.// -->
 							<div class="form-group col-md-6">
-								<label>Preço da Venda</label> <br>
+								<label>Categoria do Produto</label> <br>
 								<select id="categoriaProduto"
 									name="categoriaProduto">
 									<option value="">Selecione</option>
