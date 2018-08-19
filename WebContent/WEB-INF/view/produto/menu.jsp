@@ -29,6 +29,7 @@
     <li class="nav-item">
       <a class="nav-link" href="cate">ADC.Categoria</a>
     </li>
+    <a href="<%=request.getContextPath()%>/logout">Logout</a>
    
   </ul>
 </nav>

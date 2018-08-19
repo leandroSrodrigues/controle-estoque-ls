@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,65 +8,77 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" />
-	
-	<link rel="stylesheet" type="text/css"
+
+<link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/teste.css" />
 
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min.js"></script>
-	
-	
+
+
 
 </head>
 <body>
 
 
 
-<c:import url="menu.jsp" />
+	<c:import url="menu.jsp" />
 
-<h2>Modal Login Form</h2>
-<div class="container">
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-</div>
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="efetuarLogin" method="post">
-    <div class="imgcontainer">
-    </div>
 
-    <div class="lg" style="    padding-right: 3%; padding-left: 25%; margin-right: auto;">
-      <label for="uname"><b>Usuario:</b></label>
-      <input type="text" placeholder="Enter Username"   value="${usuario.login}" required>
 
-      <label for="psw"><b>Senha:</b></label>
-      <input type="password" placeholder="Enter Password"  value="${usuario.senha}" required>
-        
-      <button type="submit">Login</button>
-      
-        
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-</form>
-</div>
+	<div class="container">
+		<hr>
+		<br>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<header>
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+						<div class="imgcontainer">
+							<img src="<%=request.getContextPath()%>/resources/img/avatar.jpg"
+								alt="Avatar" class="avatar">
+						</div>
+					</header>
+					<article class="card-body">
+						<form action="efetuarLogin" method="post" class="register-form">
+							<div class="form-group">
+								<label for="usr">Usuário:</label> 
+								<input type="text" name="login" value="${usuario.login}"	class="form-control" id="usr">
+							</div>
+							<div class="form-group">
+								<label for="pwd">Senha:</label> 
+								<input type="password" name="senha" value="${usuario.senha}" class="form-control" id="pwd">
+							</div>
+
+
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button class="btn btn-success btn-block">Entrar</button>
+							</div>
+
+							<label> <input type="checkbox" checked="checked"
+								name="remember"> Lembre-me
+							</label>
+
+							<div class="container" style="background-color: #f1f1f1">
+								<input class="btn btn-danger" type="reset" value="Cancelar">
+								<span class="psw" >Esqueceu a <a href="#">senha?</a></span>
+							</div>
+							<!-- form-group// -->
+						</form>
+
+
+						
+						</form>
+					
+
+
+	</div>
+	<!--container end.//-->
+
+
+
 </body>
 </html>

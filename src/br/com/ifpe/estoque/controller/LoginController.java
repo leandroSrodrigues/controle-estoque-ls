@@ -20,9 +20,15 @@ public class LoginController {
 	Usuario usuarioLogado = dao.buscarUsuario(usuario);
 	if (usuarioLogado != null) {
 	 session.setAttribute("usuarioLogado", usuarioLogado);
-	 return "produto/add";
+	 return "produto/incluirProduto";
 	}
 	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
-	return "produto/inicio";
+	return "produto/Inicio";
+	}
+	
+	@RequestMapping("sair")
+	public String logout(HttpSession session) {
+	session.invalidate();
+	return "produto/Inicio";
 	}
 }
