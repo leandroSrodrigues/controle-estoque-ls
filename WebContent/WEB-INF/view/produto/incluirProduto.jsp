@@ -19,7 +19,6 @@
 	<c:import url="menu.jsp" />
 
 	<div class="container">
-		<hr>
 		<br>
 
 		<div class="row justify-content-center">

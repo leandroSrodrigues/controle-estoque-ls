@@ -5,13 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "categoria_produto")
 public class CategoriaProduto {
 	@Id
 	private int id;
+	
+	
 	@Column
 	private String codigo;
+	
+
 	@Column
 	private String descricao;
 

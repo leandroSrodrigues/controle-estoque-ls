@@ -18,7 +18,6 @@
 <c:import url="menu.jsp" />
 
 	<div class="container">
-		<hr>
 		<br>
 
 		<div class="row justify-content-center">
@@ -30,6 +29,8 @@
 					</header>
 					<article class="card-body">
 					<form action="savecat" method="post" class="register-form">
+					
+					
 						<div class="form-row">
 							<div class="col form-group">
 								<label>Codigo </label> <input name="codigo" class="form-control"

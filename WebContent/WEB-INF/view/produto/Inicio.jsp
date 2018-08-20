@@ -22,13 +22,12 @@
 
 
 
-	<c:import url="menu.jsp" />
+
 
 
 
 
 	<div class="container">
-		<hr>
 		<br>
 
 		<div class="row justify-content-center">
@@ -51,6 +50,7 @@
 								<label for="pwd">Senha:</label> 
 								<input type="password" name="senha" value="${usuario.senha}" class="form-control" id="pwd">
 							</div>
+							
 
 
 							<!-- form-group end.// -->
