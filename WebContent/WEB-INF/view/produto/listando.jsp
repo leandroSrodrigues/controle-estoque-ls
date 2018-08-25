@@ -17,10 +17,19 @@
 .js"></script>
 <jsp:useBean id="dao" class="br.com.ifpe.estoque.model.ProdutoDao" />
 </head>
+ 
+ <style>
+ 
+ .afas{
+margin-left: 120px;
+ }
+ </style>
+
 <body>
 
 
 	<c:import url="menu.jsp" />
+	<div class="afas">
 	<div class="container" style="text-align: center;">
 		<hr>
 		<h3>Filtro Produtos</h3>
@@ -143,8 +152,7 @@ Imagem não informado.
 		</table>
 	</div>
 </body>
-<div class="alert alert-success" role="alert">
-  <%= (request.getAttribute("msg") != null) ? request.getAttribute("msg") : "" %>
+
 </div>
 
 </html>

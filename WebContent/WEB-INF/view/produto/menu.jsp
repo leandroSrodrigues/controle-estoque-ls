@@ -7,11 +7,67 @@
 <title>Menu</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" />
-
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min
-.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min.js"></script>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+	
+ .menu{
+   
+   background-color: #495057;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    padding-top: 30px;
+ 
+ }
+  /* links */
+ .me{
+ font-size: 15px;
+    color: white;
+    display: block;
+  padding: 5px 20px;
+  }
+   
+    /* botão sair e nome do usuário */
+  .bt {
+  
+   margin-left: 50px;
+}
+ /* bordas dos link */
+.d{
+ border-width: medium;
+    border-style: solid;
+    border-color: #17a2b8;
+    border-radius:50px;
+        margin-bottom: 5px;
+    
+}
+
+ /* foto do perfil  */
+.avatarmenu{
+width: 50%;
+    border-radius: 50%;
+}
+ 
+  /* icone do usuário online  */
+ .glyphicon-user{
+ color:#2cec2c;
+ }
+  /* nome da empresa no menu */
+ .logo{
+font-size: 30px;
+text-align: center;
+margin-left: 25px;
+color: aqua;
+ }
+ 
+</style>
 	
 </head>
 <body>
@@ -19,32 +75,41 @@
 
 
 
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="inicio">ESTOQUE</a>
+
+
+
+
+
+
+<div class="menu">
+ <label class="logo">ESTOQUE</label>
+ <br>
+ <br>
+ <br>
+<img src="<%=request.getContextPath()%>/resources/img/avatar.jpg"  class="avatarmenu bt">
+
+<a class="me bt " href=""><span class="glyphicon glyphicon-user"></span> ${usuarioLogado.nome}</a>
+<a    class="me bt" href="<%=request.getContextPath()%>/sair"><button  class="btn btn-danger fa fa-close" style=" margin-height: 200px;" >Sair</button></a>
+ <br>
   
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="add">Cadastrar</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="list">Listar</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="cate">ADC.Categoria</a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link" href=""> <i class="fa fa-user-circle-o"></i>  ${usuarioLogado.nome}</a>
-    </li>
-    <li class="nav-item ">
-      <a class="nav-link " href="<%=request.getContextPath()%>/sair"> <i class="fa fa-times-circle-o"></i>Sair</a>
-    </li>
-   
-   
-   
-  </ul>
-</nav>
+  <a class="me d" href="add"> <span class="glyphicon glyphicon-pencil"></span> Cadastrar Produto</a>
+  
+  <a class="me d" href="list"> <span class="glyphicon glyphicon-list-alt"></span> Listar</a>
+  
+  <a class="me d" href="cate"> <span class="glyphicon glyphicon-pencil"></span> ADC.Categoria</a>
+  
+
+</div>
+
+<div class="main">
+  
+</div>
+
+
+
+
+
+
 
 </body>
 </html>
