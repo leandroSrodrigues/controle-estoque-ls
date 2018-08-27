@@ -27,4 +27,22 @@ public class UsuarioDao {
 		return obj;
 		}
 	
+	public void salvar(Usuario usuario) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+		EntityManager manager = factory.createEntityManager();
+		manager.getTransaction().begin();
+		manager.persist(usuario);
+		manager.getTransaction().commit();
+		manager.close();
+		factory.close();
+	}
+	
+	public List<Usuario> listar() {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+		EntityManager manager = factory.createEntityManager();
+		List<Usuario> lista = manager.createQuery("FROM Usuario ORDER BY nome").getResultList();
+		manager.close();
+		factory.close();
+		return lista;
+		}
 }

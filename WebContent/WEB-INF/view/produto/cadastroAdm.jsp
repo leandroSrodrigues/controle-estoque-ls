@@ -1,19 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min.js">
 </script>
 <body>
+
 
 <c:import url="menu.jsp" />
 
@@ -25,21 +26,34 @@
 				<div class="card">
 					<header class="card-header">
 
-					<h4 class="card-title mt-2">Cadastro Categoria produto</h4>
+					<h4 class="card-title mt-2">Cadastro de ADM</h4>
 					</header>
 					<article class="card-body">
-					<form action="savecat" method="post" class="register-form">
+					<form action="saveadm" method="post" class="register-form">
 					
 					
 						<div class="form-row">
 							<div class="col form-group">
-								<label>Codigo </label> <input name="codigo" class="form-control"
-									type="text" value="${CategoriaProduto.codigo}">
+								<label>Nome </label> <input name="nome" class="form-control"
+									type="text" >
 							</div>
 							<!-- form-group end.// -->
 							<div class="col form-group">
-								<label>Descrição</label> <input name="descricao"
+								<label>E-mail</label> <input name="email"
 									class="form-control" type="text">
+							</div>
+							<!-- form-group end.// -->
+						</div>
+						
+						<div class="form-row">
+							<div class="col form-group">
+								<label>Login </label> <input name="login" class="form-control"
+									type="text" >
+							</div>
+							<!-- form-group end.// -->
+							<div class="col form-group">
+								<label>Senha</label> <input name="senha"
+									class="form-control" type="password">
 							</div>
 							<!-- form-group end.// -->
 						</div>
@@ -47,13 +61,13 @@
 						
 						<!-- form-group end.// -->
 						<div class="form-group">
-							<button class="btn btn-primary btn-block">Inserir</button>
+							<button class="btn btn-primary btn-block">Cadastrar</button>
 						</div>
 						<!-- form-group// -->
 					</form>
 
-					<small class="text-muted">Ao clicar no botão "Inserir",
-						você esta cadastrando a categoria do produto.</small>
+					<small class="text-muted">Ao clicar no botão "Cadastrar",
+						você está cadastrando um novo ADM.</small>
 					</form>
 					</article>
 					<!-- card-body end .// -->
@@ -69,7 +83,7 @@
 
 	</div>
 	<!--container end.//-->
-	<h5 class="text-danger" role="alert">${msg1}</h5>
+
 
 
 </body>
