@@ -41,6 +41,14 @@ public class SistemaController {
 		return "forward:cate";
 	}
 	
+	@RequestMapping("/listCat")
+	public String listarCategoria(Model model) {
+	CategoriaProdutoDao dao = new CategoriaProdutoDao();
+	List<CategoriaProduto> listaCategoria = dao.listar();
+	model.addAttribute("listaCategoria", listaCategoria);
+	return "produto/listarCategoria";
+	}
+	
 	@RequestMapping("adm")
 	public String cadastroadm() {
 	System.out.println("Executando a lógica com Spring MVC.");
@@ -55,11 +63,11 @@ public class SistemaController {
 	}
 
 	@RequestMapping("/listUsu")
-	public String listarProduto(Model model) {
+	public String listarUsuario(Model model) {
 	UsuarioDao dao = new UsuarioDao();
 	List<Usuario> listaUsuario = dao.listar();
-	model.addAttribute("listaProduto", listaUsuario);
-	return "produto/listando";
+	model.addAttribute("listaUsuario", listaUsuario);
+	return "produto/listarUsuario";
 	}
 	
 	

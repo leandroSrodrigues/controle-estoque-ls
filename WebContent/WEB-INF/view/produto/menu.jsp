@@ -98,6 +98,8 @@ color: aqua;
   
   <a class="me d" href="cate"> <span class="glyphicon glyphicon-pencil"></span> ADC.Categoria</a>
   
+  <a class="me d" href="listCat"> <span class="glyphicon glyphicon-pencil"></span> Listar Categoria</a>
+  
    <a class="me d" href="adm"> <span class="glyphicon glyphicon-pencil"></span> Cadastrar ADM</a>
    
     <a class="me d" href="listUsu"> <span class="glyphicon glyphicon-pencil"></span> Listar Usuarios</a>
