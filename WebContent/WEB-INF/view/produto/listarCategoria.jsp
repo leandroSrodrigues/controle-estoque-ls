@@ -13,8 +13,7 @@
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" />
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min
-.js"></script>
+	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min.js"></script>
 <jsp:useBean id="dao" class="br.com.ifpe.estoque.model.CategoriaProdutoDao" />
 </head>
 <style>
@@ -70,8 +69,8 @@ descrição não informada.
 							</c:choose></td>
 
 						
-						<td><a href=""> <button class="btn btn-primary">Alterar</button> </a> </td>
-						<td><a href=""><button  class="btn btn-danger">Deletar</button></a></td>
+						<td><a href="editCat?id=${CategoriaProduto.id}"> <button class="btn btn-primary">Alterar</button> </a> </td>
+						<td><a href="deleteCat?id=${CategoriaProduto.id}"><button  class="btn btn-danger">Deletar</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

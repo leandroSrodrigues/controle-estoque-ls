@@ -13,8 +13,7 @@
 	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" />
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min
-.js"></script>
+	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.min.js"></script>
 <jsp:useBean id="dao" class="br.com.ifpe.estoque.model.ProdutoDao" />
 </head>
  

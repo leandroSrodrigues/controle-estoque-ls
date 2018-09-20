@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.ifpe.estoque.model.CategoriaProduto;
 import br.com.ifpe.estoque.model.CategoriaProdutoDao;
+import br.com.ifpe.estoque.model.Produto;
+import br.com.ifpe.estoque.model.ProdutoDao;
 import br.com.ifpe.estoque.model.Usuario;
 import br.com.ifpe.estoque.model.UsuarioDao;
 
@@ -48,6 +51,32 @@ public class SistemaController {
 	model.addAttribute("listaCategoria", listaCategoria);
 	return "produto/listarCategoria";
 	}
+	
+	@RequestMapping("/editCat")
+	public String edit(@RequestParam("id") Integer id, Model model)
+	{
+		CategoriaProdutoDao dao = new CategoriaProdutoDao();
+		CategoriaProduto categoriaProduto = dao.buscarPorId(id);
+	model.addAttribute("categoriaProduto", categoriaProduto);
+	return "produto/categoria/alterarCategoria";
+	}
+	
+	@RequestMapping("/updateCat")
+	public String update(CategoriaProduto categoriaProduto, Model model) {
+		CategoriaProdutoDao dao = new CategoriaProdutoDao();
+	dao.alterar(categoriaProduto);
+	model.addAttribute("mensagem", "Categoria Alterado com Sucesso !");
+	return "forward:listCat";
+	}
+	
+	@RequestMapping("/deleteCat")
+	public String delete(@RequestParam("id") Integer id, Model model) {
+		CategoriaProdutoDao dao = new CategoriaProdutoDao();
+	dao.remover(id);
+	model.addAttribute("msg", "Produto Removido com Sucesso");
+	return "forward:listCat";
+	}
+	
 	
 	@RequestMapping("adm")
 	public String cadastroadm() {

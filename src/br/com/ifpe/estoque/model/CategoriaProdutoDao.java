@@ -38,4 +38,27 @@ public class CategoriaProdutoDao {
 		manager.close();
 		factory.close();
 	}
+	
+	
+
+	public void alterar(CategoriaProduto categoriaProduto) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+		EntityManager manager = factory.createEntityManager();
+		manager.getTransaction().begin();
+		manager.merge(categoriaProduto);
+		manager.getTransaction().commit();
+		manager.close();
+		factory.close();
+	}
+
+	public void remover(int id) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+		EntityManager manager = factory.createEntityManager();
+		CategoriaProduto categoriaProduto = manager.find(CategoriaProduto.class, id);
+		manager.getTransaction().begin();
+		manager.remove(categoriaProduto);
+		manager.getTransaction().commit();
+		manager.close();
+		factory.close();
+	}
 }

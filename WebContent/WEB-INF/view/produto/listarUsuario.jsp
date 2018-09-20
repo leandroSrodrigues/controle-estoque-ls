@@ -78,8 +78,8 @@ Login não informado.
 </c:otherwise>
 							</c:choose></td>
 						
-						<td><a href=""> <button class="btn btn-primary">Alterar</button> </a> </td>
-						<td><a href=""><button  class="btn btn-danger">Deletar</button></a></td>
+						<td><a href="editUsu?id=${usuario.id}"> <button class="btn btn-primary">Alterar</button> </a> </td>
+						<td><a href="deleteUsu?id=${usuario.id}"><button  class="btn btn-danger">Deletar</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
